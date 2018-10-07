@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.okrueger.whoIsHome.handler;
+package com.okrueger.randomNumber.handler;
 
 import java.util.Optional;
 import java.util.Calendar;

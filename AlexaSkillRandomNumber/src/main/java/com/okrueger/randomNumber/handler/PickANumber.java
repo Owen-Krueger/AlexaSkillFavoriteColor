@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.okrueger.whoIsHome.handler;
+package com.okrueger.randomNumber.handler;
 
 import java.util.Optional;
 import com.amazon.ask.dispatcher.request.handler.HandlerInput;
@@ -15,10 +15,10 @@ import static com.amazon.ask.request.Predicates.intentName;
  *
  * @author owk91
  */
-public class IAmHomeIntentHandler implements RequestHandler{
+public class PickANumber implements RequestHandler{
     
     public boolean canHandle(HandlerInput input){
-        return input.matches(intentName("IAmHome"));
+        return input.matches(intentName("WhoIsHome"));
     }
     
     public Optional<Response> handle(HandlerInput input){
