@@ -28,7 +28,7 @@ public class RollADiceIntentHandler implements RequestHandler{
         Random rand = new Random();
         int dice = rand.nextInt(6) + 1;
         
-        speechText = "" + dice;
+        speechText = "Dice number is " + dice;
         
         return input.getResponseBuilder()
                 .withSpeech(speechText)

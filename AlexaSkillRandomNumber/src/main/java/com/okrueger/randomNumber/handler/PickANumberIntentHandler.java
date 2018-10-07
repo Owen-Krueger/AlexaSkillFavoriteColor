@@ -28,7 +28,7 @@ public class PickANumberIntentHandler implements RequestHandler{
         Random rand = new Random();
         int num = rand.nextInt(10) + 1;
         
-        speechText = "" + num;
+        speechText = "Random number is " + num;
         
         return input.getResponseBuilder()
                 .withSpeech(speechText)

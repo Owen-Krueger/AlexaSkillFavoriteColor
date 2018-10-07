@@ -29,10 +29,10 @@ public class FlipACoinIntentHandler implements RequestHandler{
         int coin = rand.nextInt(1);
         
         if(coin == 0){
-            speechText = "Heads";
+            speechText = "Coin flip is Heads";
         }
         else {
-            speechText = "Tails";
+            speechText = "Coin flip is Tails";
         }
         
         return input.getResponseBuilder()
