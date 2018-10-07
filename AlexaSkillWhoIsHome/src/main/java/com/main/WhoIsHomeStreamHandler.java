@@ -9,7 +9,7 @@ import com.amazon.ask.Skill;
 import com.amazon.ask.SkillStreamHandler;
 import com.amazon.ask.Skills;
 import com.okrueger.whoIsHome.handler.CancelandStopIntentHandler;
-import com.okrueger.whoIsHome.handler.DuluthAlternateParkingIntentHandler;
+import com.okrueger.whoIsHome.handler.WhoIsHomeIntentHandler;
 import com.okrueger.whoIsHome.handler.HelpIntentHandler;
 import com.okrueger.whoIsHome.handler.LaunchRequestHandler;
 import com.okrueger.whoIsHome.handler.SessionEndedRequestHandler;
@@ -22,9 +22,8 @@ public class WhoIsHomeStreamHandler extends SkillStreamHandler{
     
     private static Skill getSkill(){
         return Skills.standard()
-                .addRequestHandlers(
-                        new CancelandStopIntentHandler(),
-                        new DuluthAlternateParkingIntentHandler(),
+                .addRequestHandlers(new CancelandStopIntentHandler(),
+                        new WhoIsHomeIntentHandler(),
                         new HelpIntentHandler(),
                         new LaunchRequestHandler(),
                         new SessionEndedRequestHandler())
