@@ -9,10 +9,12 @@ import com.amazon.ask.Skill;
 import com.amazon.ask.SkillStreamHandler;
 import com.amazon.ask.Skills;
 import com.okrueger.randomNumber.handler.CancelandStopIntentHandler;
-import com.okrueger.randomNumber.handler.FlipACoin;
+import com.okrueger.randomNumber.handler.FlipACoinIntentHandler;
 import com.okrueger.randomNumber.handler.HelpIntentHandler;
 import com.okrueger.randomNumber.handler.LaunchRequestHandler;
 import com.okrueger.randomNumber.handler.SessionEndedRequestHandler;
+import com.okrueger.randomNumber.handler.RollADiceIntentHandler;
+import com.okrueger.randomNumber.handler.PickANumberIntentHandler;
 
 /**
  *
@@ -23,7 +25,9 @@ public class RandomNumberStreamHandler extends SkillStreamHandler{
     private static Skill getSkill(){
         return Skills.standard()
                 .addRequestHandlers(new CancelandStopIntentHandler(),
-                        new FlipACoin(),
+                        new FlipACoinIntentHandler(),
+                        new RollADiceIntentHandler(),
+                        new PickANumberIntentHandler(),
                         new HelpIntentHandler(),
                         new LaunchRequestHandler(),
                         new SessionEndedRequestHandler())

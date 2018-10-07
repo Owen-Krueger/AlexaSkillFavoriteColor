@@ -16,28 +16,23 @@ import java.util.Random;
  *
  * @author owk91
  */
-public class FlipACoin implements RequestHandler{
+public class PickANumberIntentHandler implements RequestHandler{
     
     public boolean canHandle(HandlerInput input){
-        return input.matches(intentName("FlipACoin"));
+        return input.matches(intentName("NumberBetweenTen"));
     }
     
     public Optional<Response> handle(HandlerInput input){
         String speechText;
         
         Random rand = new Random();
-        int coin = rand.nextInt(1);
+        int num = rand.nextInt(10) + 1;
         
-        if(coin == 0){
-            speechText = "Heads";
-        }
-        else {
-            speechText = "Tails";
-        }
+        speechText = "" + num;
         
         return input.getResponseBuilder()
                 .withSpeech(speechText)
-                .withSimpleCard("Coin Flip", speechText)
+                .withSimpleCard("Number 1-10", speechText)
                 .build();
     }
 }

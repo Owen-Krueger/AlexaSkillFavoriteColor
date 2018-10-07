@@ -25,35 +25,11 @@ public boolean canHandle(HandlerInput input) {
     }
 public Optional<Response> handle(HandlerInput input) {
         String speechText;
-        boolean evenSide;
-        
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTimeZone(TimeZone.getTimeZone("GMT-5"));
-        
-        String parking;
-        
-        if((calendar.get(Calendar.WEEK_OF_YEAR) % 2) == 0){
-            evenSide = true;
-        }
-        else {
-            evenSide = false;
-        }
-        
-        if(calendar.get(Calendar.DAY_OF_WEEK) == 1 && calendar.get(Calendar.HOUR_OF_DAY) < 16){
-            evenSide = !evenSide;
-        }
-        
-        if(evenSide){
-            parking = "Even Side";
-        }
-        else {
-            parking = "Odd Side";
-        }
-        speechText = "Park on the " + parking + " today.";
+        speechText = "Hello";
         
         return input.getResponseBuilder()
                 .withSpeech(speechText)
-                .withSimpleCard("Duluth Parking", speechText)
+                .withSimpleCard("Hello", speechText)
                 .build();
     }
 }
