@@ -23,11 +23,11 @@ public boolean canHandle(HandlerInput input) {
     }
 public Optional<Response> handle(HandlerInput input) {
         String speechText;
-        speechText = "Hello";
+        speechText = "Do you want a dice roll, a coin flip or a random number?";
         
         return input.getResponseBuilder()
                 .withSpeech(speechText)
-                .withSimpleCard("Hello", speechText)
+                .withSimpleCard("Dice Roll, Coin flip, or Random Number", speechText)
                 .build();
     }
 }
