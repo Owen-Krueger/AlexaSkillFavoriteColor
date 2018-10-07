@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.okrueger.favoriteColor.handler;
+package com.okrueger.whoIsHome.handler;
 
 import java.util.Optional;
 import com.amazon.ask.dispatcher.request.handler.HandlerInput;
