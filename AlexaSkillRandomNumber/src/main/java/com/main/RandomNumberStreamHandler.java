@@ -27,7 +27,7 @@ public class RandomNumberStreamHandler extends SkillStreamHandler{
                         new HelpIntentHandler(),
                         new LaunchRequestHandler(),
                         new SessionEndedRequestHandler())
-                .withSkillId("amzn1.ask.skill.b7f86be7-8738-4785-bf2d-6b86c69696e1")
+                .withSkillId("amzn1.ask.skill.a8ac955d-9351-4a2a-8878-1380fe5af351")
                 .build();
                 
     }

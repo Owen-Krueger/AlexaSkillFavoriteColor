@@ -10,6 +10,7 @@ import com.amazon.ask.dispatcher.request.handler.HandlerInput;
 import com.amazon.ask.dispatcher.request.handler.RequestHandler;
 import com.amazon.ask.model.Response;
 import static com.amazon.ask.request.Predicates.intentName;
+import java.util.Random;
 
 /**
  *
@@ -18,17 +19,20 @@ import static com.amazon.ask.request.Predicates.intentName;
 public class PickANumber implements RequestHandler{
     
     public boolean canHandle(HandlerInput input){
-        return input.matches(intentName("WhoIsHome"));
+        return input.matches(intentName("NumberBetweenTen"));
     }
     
     public Optional<Response> handle(HandlerInput input){
         String speechText;
         
-        speechText = "SpeechText";
+        Random rand = new Random();
+        int num = rand.nextInt(10) + 1;
+        
+        speechText = "" + num;
         
         return input.getResponseBuilder()
                 .withSpeech(speechText)
-                .withSimpleCard("Who Is Home", speechText)
+                .withSimpleCard("Number 1-10", speechText)
                 .build();
     }
 }

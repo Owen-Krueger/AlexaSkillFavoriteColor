@@ -10,6 +10,7 @@ import com.amazon.ask.dispatcher.request.handler.HandlerInput;
 import com.amazon.ask.dispatcher.request.handler.RequestHandler;
 import com.amazon.ask.model.Response;
 import static com.amazon.ask.request.Predicates.intentName;
+import java.util.Random;
 
 /**
  *
@@ -18,17 +19,25 @@ import static com.amazon.ask.request.Predicates.intentName;
 public class FlipACoin implements RequestHandler{
     
     public boolean canHandle(HandlerInput input){
-        return input.matches(intentName("WhoIsHome"));
+        return input.matches(intentName("FlipACoin"));
     }
     
     public Optional<Response> handle(HandlerInput input){
         String speechText;
         
-        speechText = "SpeechText";
+        Random rand = new Random();
+        int coin = rand.nextInt(1);
+        
+        if(coin == 0){
+            speechText = "Heads";
+        }
+        else {
+            speechText = "Tails";
+        }
         
         return input.getResponseBuilder()
                 .withSpeech(speechText)
-                .withSimpleCard("Who Is Home", speechText)
+                .withSimpleCard("Coin Flip", speechText)
                 .build();
     }
 }

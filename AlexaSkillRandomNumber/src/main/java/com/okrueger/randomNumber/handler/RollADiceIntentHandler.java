@@ -10,6 +10,7 @@ import com.amazon.ask.dispatcher.request.handler.HandlerInput;
 import com.amazon.ask.dispatcher.request.handler.RequestHandler;
 import com.amazon.ask.model.Response;
 import static com.amazon.ask.request.Predicates.intentName;
+import java.util.Random;
 
 /**
  *
@@ -18,17 +19,20 @@ import static com.amazon.ask.request.Predicates.intentName;
 public class RollADiceIntentHandler implements RequestHandler{
     
     public boolean canHandle(HandlerInput input){
-        return input.matches(intentName("IAmHome"));
+        return input.matches(intentName("RollADice"));
     }
     
     public Optional<Response> handle(HandlerInput input){
         String speechText;
         
-        speechText = "Welcome Home";
+        Random rand = new Random();
+        int dice = rand.nextInt(6) + 1;
+        
+        speechText = "" + dice;
         
         return input.getResponseBuilder()
                 .withSpeech(speechText)
-                .withSimpleCard("Who Is Home", speechText)
+                .withSimpleCard("Dice Roll", speechText)
                 .build();
     }
 }
