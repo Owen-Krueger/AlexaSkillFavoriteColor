@@ -6,8 +6,6 @@
 package com.okrueger.randomNumber.handler;
 
 import java.util.Optional;
-import java.util.Calendar;
-import java.util.TimeZone;
 
 import com.amazon.ask.dispatcher.request.handler.HandlerInput;
 import com.amazon.ask.dispatcher.request.handler.RequestHandler;

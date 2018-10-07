@@ -22,10 +22,10 @@ public boolean canHandle(HandlerInput input) {
     }
 
 public Optional<Response> handle(HandlerInput input) {
-        String speechText = "Ask me what side of the street to park on in Duluth, Minnesota!";
+        String speechText = "Ask me to flip a coin, roll a dice or pick a random number!";
         return input.getResponseBuilder()
                 .withSpeech(speechText)
-                .withSimpleCard("DuluthParking", speechText)
+                .withSimpleCard("Random Number", speechText)
                 .withReprompt(speechText)
                 .build();
     }

@@ -20,7 +20,7 @@ public Optional<Response> handle(HandlerInput input) {
         String speechText = "Bye Bye";
         return input.getResponseBuilder()
                 .withSpeech(speechText)
-                .withSimpleCard("Duluth Parking", speechText)
+                .withSimpleCard("Random Number", speechText)
                 .build();
     }
 }
